@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import AddTodo from "./AddTodo";
 import Header from "./Header";
 import Todo from "./Todo";
+import styles from "./TodoList.module.css";
 
 export default function TodoList() {
   const [todos, setTodos] = useState(initialTodo);
@@ -34,9 +35,9 @@ export default function TodoList() {
   const filtered = Filter(filter, todos);
 
   return (
-    <section>
-      <Header onChange={changeFilter} />
-      <ul>
+    <section className={styles.container}>
+      <Header selected={filter} onChange={changeFilter} />
+      <ul className={styles.todos}>
         {filtered.map((todo) => (
           <Todo
             key={todo.id}

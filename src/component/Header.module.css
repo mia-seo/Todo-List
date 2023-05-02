@@ -1,0 +1,35 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-bg-dark);
+  padding: 0 0.5rem;
+}
+
+.toggle {
+  font-size: 1.4rem;
+  color: var(--color-text);
+}
+
+.filters {
+  display: flex;
+}
+
+.filter {
+  font-weight: bold;
+  font-size: 1.4rem;
+  color: var(--color-text);
+  opacity: 0.8;
+}
+
+.filter:hover,
+.filter.selected {
+  opacity: 1;
+}
+
+.filter.selected::after {
+  content: "";
+  display: block;
+  margin-top: 5px;
+  border: 1.5px solid var(--color-text);
+}

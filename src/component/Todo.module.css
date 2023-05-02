@@ -1,0 +1,47 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 1.5rem;
+  color: var(--color-text);
+  overflow: auto;
+}
+
+.checkbox {
+  width: 18px;
+  height: 18px;
+  margin-right: 0.5rem;
+}
+
+.input {
+  height: 100%;
+  border-radius: 5px;
+  padding: 0 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.icon {
+  width: 18px;
+  height: 18px;
+  background-color: var(--color-bg-dark);
+  border-radius: 100%;
+  padding: 0.1rem;
+  margin: 0 0.3rem;
+  transition: all 150ms ease-in-out;
+}
+
+.icon:hover {
+  background-color: var(--color-accent);
+}
+
+.button {
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.button:hover {
+  transform: scale(1.2);
+  color: var(--color-white);
+}

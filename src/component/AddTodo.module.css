@@ -1,0 +1,31 @@
+.form {
+  display: flex;
+  background-color: var(--color-bg-dark);
+  padding: 1rem;
+}
+
+.input {
+  height: 50px;
+  display: flex;
+  flex: 1 1 auto;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  padding: 0 1rem;
+}
+
+.input:focus {
+  outline: none;
+}
+
+.button {
+  width: 50px;
+  background-color: var(--color-accent);
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  color: var(--color-white);
+}
+
+.button:hover {
+  cursor: pointer;
+  filter: brightness(125%);
+}

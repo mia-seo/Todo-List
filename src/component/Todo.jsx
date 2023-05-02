@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import { HiPencil, HiTrash } from "react-icons/hi";
-import { AiOutlineCheckCircle, AiOutlineCloseCircle } from "react-icons/ai";
+import { FaCheck } from "react-icons/fa";
+import { GiCancel } from "react-icons/gi";
+import styles from "./Todo.module.css";
 
 export default function Todo({ todo, onUpdate, onDelete }) {
   const { id, text, checked, isEditing } = todo;
@@ -29,43 +31,50 @@ export default function Todo({ todo, onUpdate, onDelete }) {
   };
 
   return (
-    <li>
+    <li className={styles.todo}>
       <div>
         <input
+          className={styles.checkbox}
           type="checkbox"
           id={id}
           checked={checked}
           onChange={updateCheck}
         />
         {isEditing ? (
-          <input type="text" value={newText} onChange={changeText} />
+          <input
+            className={styles.input}
+            type="text"
+            value={newText}
+            onChange={changeText}
+            required
+          />
         ) : (
           <label htmlFor={id}>{text}</label>
         )}
       </div>
       {isEditing ? (
-        <div>
-          <span>
-            <button>
-              <AiOutlineCheckCircle onClick={updateText} />
+        <div className={styles.icons}>
+          <span className={styles.icon}>
+            <button className={styles.button}>
+              <FaCheck onClick={updateText} />
             </button>
           </span>
-          <span>
-            <button>
-              <AiOutlineCloseCircle onClick={() => updateEdit(false)} />
+          <span className={styles.icon}>
+            <button className={styles.button}>
+              <GiCancel onClick={() => updateEdit(false)} />
             </button>
           </span>
         </div>
       ) : (
-        <div>
-          <span>
-            <button>
+        <div className={styles.icons}>
+          <span className={styles.icon}>
+            <button className={styles.button}>
               <HiPencil onClick={() => updateEdit(true)} />
             </button>
           </span>
-          <span>
-            <button onClick={deleteTodo}>
-              <HiTrash />
+          <span className={styles.icon}>
+            <button className={styles.button}>
+              <HiTrash onClick={deleteTodo} />
             </button>
           </span>
         </div>
